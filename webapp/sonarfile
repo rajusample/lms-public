@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Sonar Analysis') {
+            steps {
+                echo 'CODE QUALITY CHECK'
+                sh '''
+                    cd webapp
+                    docker run --rm -e SONAR_HOST_URL=http://54.241.96.145:9000 -v .:/usr/src -e SONAR_TOKEN=squ_6080c65f9327510397c39148f120e5918b523159 sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms
+                '''
+            }
+        }
+    }
+}
