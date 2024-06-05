@@ -4,7 +4,7 @@
      stages {
         stage('sonar analysis') {
             steps {
-                sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL=http://54.177.82.147:9000 -v .:/usr/src -e SONAR_TOKEN=sqp_5dd6dd18740de2b098d4486b7527ab45f39f4c8f sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms
+                sh 'cd webapp && sudo docker run --rm -e SONAR_HOST_URL=http://54.177.82.147:9000 -v .:/usr/src -e SONAR_TOKEN=sqp_5dd6dd18740de2b098d4486b7527ab45f39f4c8f sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms'
                 echo 'CODE QUALITY COMPLETED'   
             }
         }
