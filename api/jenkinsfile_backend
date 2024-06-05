@@ -1,6 +1,7 @@
 Jenkins file 
 pipeline {
     agent{
+        label 'docker'
     }
 
     environment {
