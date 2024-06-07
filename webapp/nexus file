@@ -15,6 +15,7 @@ pipeline {
     }
     stage('download artifact') {
         steps {
+           sh 'sudo rm lms-v1.1.zip'
            sh 'curl -u admin:admin -X GET http://52.53.169.207:8081/repository/lms/lms-v1.1.zip --output lms-v1.1.zip'
            sh 'unzip lms-v1.1.zip'
            sh 'sudo rm -r /var/www/html/*'
